@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Cooperacion;
 use Illuminate\Http\Request;
-use App\Cooperacione;
 
-class CooperacioneController extends Controller
+class CooperacionController extends Controller
 {
     public function index()
     {
-        $cooperaciones = Cooperacione::latest()->paginate(5);
-        return view('cooperacione.index',compact('cooperaciones'))
+        $cooperaciones = Cooperacion::latest()->paginate(5);
+        return view('cooperacion.index',compact('cooperaciones'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-       public function create()
+    public function create()
     {
-
-        return view('cooperacione.create');
+        return view('cooperacion.create');
     }
     
     public function store(Request $request)
@@ -29,23 +28,23 @@ class CooperacioneController extends Controller
             'cantidad' => 'required',
             'fechacooperacion' => 'required',
         ]);
-        Cooperacione::create($request->all());
-        return redirect()->route('cooperacione.index')
+        Cooperacion::create($request->all());
+        return redirect()->route('cooperacion.index')
                         ->with('success','Cooperacion creada correctamente');
     }
 
 
-    public function show(Cooperacione $cooperacione)
+    public function show(Cooperacion $cooperacion)
     {
-        return view('cooperacione.show',compact('cooperacione'));
+        return view('cooperacion.show',compact('cooperacion'));
     }
 
-    public function edit(Cooperacione $cooperacione)
+    public function edit(Cooperacion $cooperacion)
     {
-        return view('cooperacione.edit',compact('cooperacione'));
+        return view('cooperacion.edit',compact('cooperacion'));
     }
 
-    public function update(Request $request,Cooperacione $cooperacione)
+    public function update(Request $request,Cooperacion $cooperacion)
     {
         request()->validate([
             'tipo' ,
@@ -54,8 +53,8 @@ class CooperacioneController extends Controller
             'cantidad' ,
           
         ]);
-        $cooperacione->update($request->all());
-        return redirect()->route('cooperacione.index')
+        $cooperacion->update($request->all());
+        return redirect()->route('cooperacion.index')
                         ->with('success','Cooperacion modificada correctamente');
     }
 

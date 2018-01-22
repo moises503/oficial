@@ -1,4 +1,4 @@
-@extends('layouts.navs')
+@extends('layouts.app')
 @section('content')
 <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -6,11 +6,11 @@
                 <h2>Agregar Cooperacion</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('cooperacione.index') }}"> Regresar</a>
+                <a class="btn btn-primary" href="{{ route('cooperacion.index') }}"> Regresar</a>
             </div>
         </div>
 </div>
-{!! Form::open(array('route' => 'cooperacione.store','method'=>'POST')) !!}
-         @include('cooperacione.form')
+    {!! Form::open(array('route' => 'cooperacion.store','method'=>'POST')) !!}
+         @include('cooperacion.form')
     {!! Form::close() !!}
 @endsection

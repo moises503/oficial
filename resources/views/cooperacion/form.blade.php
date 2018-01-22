@@ -25,11 +25,11 @@
     </div>
     <div class="col-md-6 mb-3">
         <div class="form-group">
-            <strong>Fechacooperacion:</strong>
-            {!! Form::date('fechacooperacion', null, array('placeholder' => 'Fechacooperacion','class' => 'form-control', 'required')) !!}
+            <strong>Fecha cooperacion:</strong>
+            {!! Form::date('fechacooperacion', null, array('placeholder' => 'Fecha cooperacion','class' => 'form-control', 'required')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary">Guardar</button>
+         <button type="submit" class="btn btn-primary">Guardar</button>
     </div>
 </div>

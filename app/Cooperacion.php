@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cooperacione extends Model
+class Cooperacion extends Model
 {
+    protected $table = 'cooperaciones';
+
     protected $fillable = [
         'tipo', 'descripcion' , 'organiza' , 'cantidad', 'fechacooperacion'
     ];

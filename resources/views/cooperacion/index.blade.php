@@ -1,4 +1,4 @@
-@extends('layouts.navs')
+@extends('layouts.app')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -6,7 +6,7 @@
                 <h2>Cooperaciones</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('cooperacione.create') }}"> Nueva Cooperacion</a>
+                <a class="btn btn-success" href="{{ route('cooperacion.create') }}"> Nueva Cooperacion</a>
             </div>
         </div>
     </div>
@@ -27,23 +27,19 @@
             <th width="360px">Operacion</th>
             
             </tr>
-    @foreach ($cooperaciones as $cooperacione)
+    @foreach ($cooperaciones as $cooperacion)
     <tr>
-        <td>{{ ++$i }}</td>
-        <td>{{ $cooperacione->tipo}}</td>
-        <td>{{ $cooperacione->descripcion}}</td>
-        <td>{{ $cooperacione->organiza}}</td>
-        <td>{{ $cooperacione->cantidad}}</td>
-        <td>{{ $cooperacione->fechacooperacion}}</td>
+        <td>{{ $cooperacion->id }}</td>
+        <td>{{ $cooperacion->tipo}}</td>
+        <td>{{ $cooperacion->descripcion}}</td>
+        <td>{{ $cooperacion->organiza}}</td>
+        <td>{{ $cooperacion->cantidad}}</td>
+        <td>{{ $cooperacion->fechacooperacion}}</td>
         <td>
-            <a class="btn btn-info" href="{{ route('cooperacione.show',$cooperacione->id) }}">Ver</a>
-            <a class="btn btn-info" href="{{ route('cooperacione.edit',$cooperacione->id) }}">Editar</a>
+            <a class="btn btn-info" href="{{ route('cooperacion.show',$cooperacion) }}">Ver</a>
+            <a class="btn btn-info" href="{{ route('cooperacion.edit',$cooperacion) }}">Editar</a>
             <a class="btn btn-info" href="/oficial/public/asistenciacooperacione">Ver asistencias</a>
             <a class="btn btn-primary" href="/oficial/public/asistenciacooperacione">Pasar Lista</a>
-
-
-         
-            
         </td>
         {!! Form::close() !!}
     </tr>

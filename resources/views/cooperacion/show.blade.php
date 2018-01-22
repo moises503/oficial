@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.app')
  
 @section('content')
     <div class="row">
@@ -7,7 +7,7 @@
                 <h2> Cooperacion</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('cooperacione.index') }}"> Regresar</a>
+                <a class="btn btn-primary" href="{{ route('cooperacion.index') }}"> Regresar</a>
             </div>
         </div>
     </div>
@@ -15,31 +15,31 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tipo de cooperacion:</strong>
-                {{ $cooperacione->tipo}}
+                {{ $cooperacion->tipo}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Descripcion:</strong>
-                {{ $cooperacione->descripcion}}
+                {{ $cooperacion->descripcion}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Organizo:</strong>
-                {{ $cooperacione->organiza}}
+                {{ $cooperacion->organiza}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Cantidad:</strong>
-                {{ $cooperacione->cantidad}}
+                {{ $cooperacion->cantidad}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Fecha de realizacion:</strong>
-                {{ $cooperacione->fechacooperacion}}
+                {{ $cooperacion->fechacooperacion}}
             </div>
         </div>
     </div>

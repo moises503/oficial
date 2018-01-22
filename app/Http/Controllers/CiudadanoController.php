@@ -95,5 +95,10 @@ class CiudadanoController extends Controller
         return redirect()->route('ciudadano.index')
                         ->with('success','Ciudadano modificado coorectamente');
     }
-    
+
+    public function mostrarFamiliares(Ciudadano $ciudadano)
+    {
+        $familiares = $ciudadano->familiares;
+        return view('familiar.index', compact('familiares', 'ciudadano'));
+    }
 }

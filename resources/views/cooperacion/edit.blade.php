@@ -1,4 +1,4 @@
-@extends('layouts.navs')
+@extends('layouts.app')
  
 @section('content')
     <div class="row">
@@ -7,7 +7,7 @@
                 <h2>Editar Cooperacion</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('cooperacione.index') }}"> Regresar</a>
+                <a class="btn btn-primary" href="{{ route('cooperacion.index') }}"> Regresar</a>
             </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
             </ul>
         </div>
     @endif
-    {!! Form::model($cooperacione, ['method' => 'PATCH','route' => ['cooperacione.update', $cooperacione->id]]) !!}
-        @include('cooperacione.form')
+    {!! Form::model($cooperacion, ['method' => 'PUT','route' => ['cooperacion.update', $cooperacion]]) !!}
+        @include('cooperacion.form')
     {!! Form::close() !!}
 @endsection

@@ -2,30 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Familiar;
+use App\Ciudadano;
+use Illuminate\Http\Request;
 
 class FamiliarController extends Controller
 {
     public function index()
     {
-        $familiares = Familiar::with('ciudadanos')->get();
+        $familiares = Familiar::with('ciudadano')->get();
      
         return view('familiar.index',compact('familiares'));
     }
 
+    public function agregarFamiliarACiudadano(Ciudadano $ciudadano)
+    {
+        return view('familiar.create', compact('ciudadano'));
+    }
 
     public function create()
     {
-        
-        return view('familiar.create');
+        $ciudadanos = Ciudadano::pluck('nombre', 'id');
+        return view('familiar.create', compact('ciudadanos'));
     }
     
     public function store(Request $request)
     {
-            request()->validate([
-
+        request()->validate([
             'nombre' => 'required',
             'parentesco',
             'fechanacimiento' => 'required',
@@ -34,10 +37,9 @@ class FamiliarController extends Controller
             'resideenpoblacion',
             'fechadenoresidir',
             'ciudadano_id'=> 'required',
-            
-
         ]);
-        Familiar::create($request->all());
+        $ciudadano = Ciudadano::find($request->get('ciudadano_id'));
+        $ciudadano->familiares()->create($request->all());
         return redirect()->route('familiar.index')
                         ->with('success','Familiar agregado correctamente');
     }

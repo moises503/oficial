@@ -1,6 +1,4 @@
 <div class="row">
-   
-
     <div class="col-md-6 mb-3">
         <div class="form-group">
             <strong>Nombre:</strong>
@@ -44,10 +42,14 @@
         </div>
     </div>
     <div class="col-md-6 mb-3">
-        <div class="form-group">
-            <strong>id de ciudadano:</strong>
-            {!! Form::number('ciudadano_id', null, array('placeholder' => 'id_ciudadano','class' => 'form-control')) !!}
-        </div>
+        @if(isset($ciudadano))
+            <input type="hidden" name="ciudadano_id" value="{{ $ciudadano->id }}"/>
+        @elseif(isset($ciudadanos))
+            <div class="form-group">
+                <strong>Ciudadano:</strong>
+                {!! Form::select('ciudadano_id', $ciudadanos, null, ['class' => 'form-control']) !!}
+            </div>
+        @endif
     </div>
    
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

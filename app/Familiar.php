@@ -11,7 +11,9 @@ class Familiar extends Model
     ];
 
 
-    public function ciudadanos(){
-        return $this->belongsTo('App\Ciudadano','ciudadano_id');
-       }
+    public function ciudadano()
+    {
+        //return $this->belongsTo('App\Ciudadano','ciudadano_id');
+        return $this->belongsTo(Ciudadano::class);
+    }
 }

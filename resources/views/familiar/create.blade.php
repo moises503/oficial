@@ -1,4 +1,4 @@
-@extends('layouts.navs')
+@extends('layouts.app')
 @section('content')
 
 <div class="row">
@@ -7,7 +7,7 @@
                 <h2>Agregar Familiar</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary"  href="/oficial/public/familiare"> Regresar</a>
+                <a class="btn btn-primary"  href="{{ route('ciudadano.index') }}"> Regresar</a>
             </div>
         </div>
 </div>
