@@ -1,8 +1,5 @@
 <?php
 
-
-Route::resource('members','MemberController');
-
 Route::resource('tequio','TequioController');
 
 Route::resource('asamblea','AsambleaController');

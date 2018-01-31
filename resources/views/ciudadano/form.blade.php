@@ -7,26 +7,26 @@
     </div>
     <div class="col-md-6 mb-3">
         <div class="form-group">
-            <strong>Lugar Nacimiento:</strong>
-            {!! Form::text('lugarnacimiento', null, array('placeholder' => 'Lugarnacimiento','class' => 'form-control')) !!}
+            <strong>Lugar de nacimiento:</strong>
+            {!! Form::text('lugarnacimiento', null, array('placeholder' => 'Lugar de nacimiento','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <div class="form-group">
-            <strong>Fecha Nacimiento:</strong>
-            {!! Form::date('fechanacimiento', null, array('placeholder' => 'Fechanacimiento','class' => 'form-control', 'required')) !!}
+            <strong>Fecha de nacimiento:</strong>
+            {!! Form::date('fechanacimiento', null, array('placeholder' => 'Fecha de nacimiento','class' => 'form-control', 'required')) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <div class="form-group">
-            <strong>Calle domicilio:</strong>
-            {!! Form::text('calledomicilio', null, array('placeholder' => 'Calledomicilio','class' => 'form-control')) !!}
+            <strong>Calle del domicilio:</strong>
+            {!! Form::text('calledomicilio', null, array('placeholder' => 'Calle del domicilio','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <div class="form-group">
-            <strong>Numero domicilio:</strong>
-            {!! Form::text('numerodomicilio', null, array('placeholder' => 'Numerodomicilio','class' => 'form-control')) !!}
+            <strong>Número del domicilio:</strong>
+            {!! Form::text('numerodomicilio', null, array('placeholder' => 'Número del domicilio','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
@@ -38,91 +38,94 @@
     <div class="col-md-4 mb-3">
         <div class="form-group">
             <strong>Sexo:</strong>
-            {!! Form::text('sexo', null, array('placeholder' => 'Sexo','class' => 'form-control')) !!}
+            {!! Form::select('sexo', ['Seleccione','F' => 'Femenino', 'M' => 'Masculino'], null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <div class="form-group">
-            <strong>Lengua Materna:</strong>
-            {!! Form::text('lenguamaterna', null, array('placeholder' => 'Lenguamaterna','class' => 'form-control')) !!}
+            <strong>Lengua materna:</strong>
+            {!! Form::text('lenguamaterna', null, array('placeholder' => 'Lengua materna','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <div class="form-group">
-            <strong>Ocupacion:</strong>
-            {!! Form::text('ocupacion', null, array('placeholder' => 'Ocupacion','class' => 'form-control')) !!}
+            <strong>Ocupación:</strong>
+            {!! Form::text('ocupacion', null, array('placeholder' => 'Ocupación','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <div class="form-group">
-            <strong>Grado Estudios:</strong>
-            {!! Form::text('gradoestudios', null, array('placeholder' => 'Gradoestudios','class' => 'form-control')) !!}
+            <strong>Grado de estudios:</strong>
+            {!! Form::select('gradoestudios', ['Seleccione','P' => 'Primaria', 'S' => 'Secundaria',
+            'B' => 'Bachillerato o preparatoria', 'L' => 'Licenciatura',
+            'M' => 'Maestría', 'D' => 'Doctorado'], null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <div class="form-group">
-            <strong>Estado Civil:</strong>
-            {!! Form::text('estadocivil', null, array('placeholder' => 'Estadocivil','class' => 'form-control')) !!}
+            <strong>Estado civil:</strong>
+            {!! Form::select('estadocivil', ['Seleccione','S' => 'Soltero(a)', 'C' => 'Casado(a)'
+            , 'V' => 'Viudo(a)', 'D' => 'Divorciado(a)', 'U' => 'Unión libre'], null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <div class="form-group">
-            <strong>Fecha Casado:</strong>
-            {!! Form::date('fechacasado', null, array('placeholder' => 'Fechacasado','class' => 'form-control')) !!}
+            <strong>Fecha en la que se caso:</strong>
+            {!! Form::date('fechacasado', null, array('placeholder' => 'Fecha en la que se caso','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <div class="form-group">
-            <strong>Fecha desde que cuenta con Ciudadania:</strong>
-            {!! Form::date('fechaciudadano', null, array('placeholder' => 'Fechaciudadano','class' => 'form-control')) !!}
+            <strong>Fecha desde que cuenta con ciudadanía:</strong>
+            {!! Form::date('fechaciudadano', null, array('placeholder' => 'Fecha desde que cuenta con ciudadanía','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <div class="form-group">
             <strong>Fecha que adquirio predio:</strong>
-            {!! Form::date('fechapredio', null, array('placeholder' => 'Fechapredio','class' => 'form-control')) !!}
+            {!! Form::date('fechapredio', null, array('placeholder' => 'Fecha que adquirio predio','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-md-3 mb-3">
         <div class="form-group">
             <strong>Servicio Agua:</strong>
-            {!! Form::text('servicioagua', null, array('placeholder' => 'SI O NO','class' => 'form-control')) !!}
+            {!! Form::select('servicioagua', ['Seleccione','si' => 'SI', 'no' => 'NO'], null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-md-6 mb-3">
         <div class="form-group">
             <strong>Nombre del titular de la toma de Agua:</strong>
-            {!! Form::text('nombretomaagua', null, array('placeholder' => 'Nombre_del_titular','class' => 'form-control')) !!}
+            {!! Form::text('nombretomaagua', null, array('placeholder' => 'Nombre del titular','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-md-3 mb-3">
         <div class="form-group">
-            <strong>Servicio Salud :</strong>
-            {!! Form::text('serviciosalud', null, array('placeholder' => 'Serviciosalud','class' => 'form-control')) !!}
+            <strong>Servicio de salud :</strong>
+            {!! Form::select('serviciosalud', ['Seleccione','si' => 'SI', 'no' => 'NO'], null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-md-3 mb-3">
         <div class="form-group">
-            <strong>Servicio Panteon:</strong>
-            {!! Form::text('serviciopanteon', null, array('placeholder' => 'SI O NO','class' => 'form-control')) !!}
+            <strong>Servicio de panteón:</strong>
+            {!! Form::select('serviciopanteon', ['Seleccione','si' => 'SI', 'no' => 'NO'], null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-md-3 mb-3">
         <div class="form-group">
             <strong>Nombre del responsable:</strong>
-            {!! Form::text('nombreresponsable', null, array('placeholder' => 'Nombreresponsable','class' => 'form-control')) !!}
+            {!! Form::text('nombreresponsable', null, array('placeholder' => 'Nombre del responsable','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-md-3 mb-3">
         <div class="form-group">
-            <strong>Servicio de Drenaje:</strong>
-            {!! Form::text('serviciodrenaje', null, array('placeholder' => 'SI O NO','class' => 'form-control')) !!}
+            <strong>Servicio de drenaje:</strong>
+            {!! Form::select('serviciodrenaje', ['Seleccione','si' => 'SI', 'no' => 'NO'], null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-md-3 mb-3">
         <div class="form-group">
-            <strong>Servicio de energia:</strong>
-            {!! Form::text('servicioenergia', null, array('placeholder' => 'SI O NO','class' => 'form-control')) !!}
+            <strong>Servicio de energía:</strong>
+            {!! Form::select('servicioenergia', ['Seleccione','si' => 'SI', 'no' => 'NO'], null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -33,37 +33,38 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Calle domicilio:</strong>
-                {{ $ciudadano->calledomicilio}}
+                {{ is_null($ciudadano->calledomicilio) ? 'No proporcionado' : $ciudadano->calledomicilio }}
+
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Numero domicilio:</strong>
-                {{ $ciudadano->numerodomicilio}}
+                {{ is_null($ciudadano->numerodomicilio) ? 'No proporcionado' : $ciudadano->numerodomicilio }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Residencia:</strong>
-                {{ $ciudadano->residencia}}
+                {{ is_null($ciudadano->residencia) ? 'No proporcionado' : $ciudadano->residencia }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Sexo:</strong>
-                {{ $ciudadano->sexo}}
+                {{ $ciudadano->sexo == 0 ? 'No proporcionado' : $ciudadano->sexo }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Lengua Materna:</strong>
-                {{ $ciudadano->lenguamaterna}}
+                {{ is_null($ciudadano->lenguamaterna) ? 'No proporcionado' : $ciudadano->lenguamaterna }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Ocupacion:</strong>
-                {{ $ciudadano->ocupacion}}
+                {{ is_null($ciudadano->ocupacion) ? 'No proporcionado' : $ciudadano->ocupacion }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -81,19 +82,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Fecha Casado:</strong>
-                {{ $ciudadano->fechacasado}}
+                {{ is_null($ciudadano->fechacasado) ? 'No proporcionado' : $ciudadano->fechacasado }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Fecha en la que tomo ciudadania:</strong>
-                {{ $ciudadano->fechaciudadano}}
+                {{ is_null($ciudadano->fechaciudadano) ? 'No proporcionado' : $ciudadano->fechaciudadano }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Fecha en la que adquirio algun predio en la poblacion:</strong>
-                {{ $ciudadano->fechapredio}}
+                {{ is_null($ciudadano->fechapredio) ? 'No proporcionado' : $ciudadano->fechapredio }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -105,7 +106,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nombre de la toma de agua:</strong>
-                {{ $ciudadano->nombretomaagua}}
+                {{ is_null($ciudadano->nombretomaagua) ? 'No proporcionado' : $ciudadano->nombretomaagua }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
