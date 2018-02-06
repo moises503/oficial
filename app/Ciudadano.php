@@ -34,4 +34,8 @@ class Ciudadano extends Model
     {
         return $this->hasMany('App\Asistenciacooperacione');
     }
+    public function scopeSearch ($query, $nombre)
+    {
+        return $query->where('nombre', 'LIKE', '%'.$nombre.'%');
+    }
 }

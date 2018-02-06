@@ -36,8 +36,8 @@
         <td>
             <a class="btn btn-info" href="{{ route('asamblea.show',$asamblea->id) }}">Ver</a>
             <a class="btn btn-info" href="{{ route('asamblea.edit',$asamblea->id) }}">Editar</a>
-            <a class="btn btn-info" href="/oficial/public/asistenciaasamblea">Ver asistencias</a>
-            <a class="btn btn-primary" href="/oficial/public/asistenciaasamblea">Pasar Lista</a>
+            <a class="btn btn-info" href="{{ route('asistenciaasamblea.index') }}">Ver asistencias</a>
+            <a class="btn btn-primary" href="{{ route('asistenciaasamblea.index') }}">Pasar Lista</a>
 
 
             {!! Form::close() !!}

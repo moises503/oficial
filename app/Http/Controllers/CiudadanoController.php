@@ -9,11 +9,10 @@ use App\Ciudadano;
 class CiudadanoController extends Controller
 {
     
-    public function index()
+   public function index(Request $request)
     {
-        $ciudadanos = Ciudadano::latest()->paginate(5);
-        return view('ciudadano.index',compact('ciudadanos'))
-        ->with('i', (request()->input('page', 1) - 1) * 5); 
+        $ciudadanos = Ciudadano::search($request->nombre)->orderBy('id', 'DESC')->paginate(5);
+        return view('ciudadano.index')->with ('ciudadanos', $ciudadanos);
     }
 
     public function create()

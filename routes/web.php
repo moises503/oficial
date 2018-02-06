@@ -21,6 +21,9 @@ Route::resource('asistenciatequio','AsistenciatequioController');
 Route::resource('asistenciacooperacione','AsistenciacooperacioneController');
 
 
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -1,4 +1,4 @@
-@extends('layouts.navs')
+@extends('layouts.app')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -6,7 +6,7 @@
                 <h2>Asistencia a Tequios</h2>
             </div>
             <div class="pull-right">
-           <!-- <a class="btn btn-success" href="{{ route('asistenciatequio.create') }}"> Pasar Lista</a> -->
+            <a class="btn btn-success" href="{{ route('asistenciatequio.create') }}"> Pasar Lista</a> 
             </div>
         </div>
     </div>

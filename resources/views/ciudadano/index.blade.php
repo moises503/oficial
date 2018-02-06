@@ -10,6 +10,17 @@
             </div>
         </div>
     </div>
+
+    <div class="pull-rigth">
+            {!! Form::open(['route' => 'ciudadano.index', 'method' => 'GET', 'class' => 'navbar-form pull-right']) !!}
+                <div class="input-group">
+               {!! Form::text('nombre', null, ['class' => 'form-control', 'placelhoder' => 'Buscar ciudadano..', 'aria-describedby' => 'search']) !!}
+                    <span class="input-group-addon" id="search">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                 </div>
+                  {!! Form::close() !!}
+    </div>
+    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
@@ -40,11 +51,10 @@
             <a class="btn btn-info" href="{{ route('ciudadano.show',$ciudadano) }}">Informacion</a>
             <a class="btn btn-info" href="{{ route('ciudadano.edit',$ciudadano) }}">Editar</a>
             <a class="btn btn-info" href="{{ route('familiar.ciudadano', $ciudadano) }}">Agregar Familiar</a>
+            <a class="btn btn-primary" href=" {{ route('asistenciatequio.index') }}">Tequios</a>
+            <a class="btn btn-primary" href=" {{ route('asistenciaasamblea.index') }}">Asambleas</a>
+            <a class="btn btn-primary" href=" {{ route('asistenciacooperacione.index') }}">Cooperaciones</a>
             <a class="btn btn-info" href="{{ route('ciudadano.familiares', $ciudadano) }}">Ver familiares</a>
-            <a class="btn btn-primary" href="/oficial/public/asistenciatequio">Tequios</a>
-            <a class="btn btn-primary" href="/oficial/public/asistenciaasamblea">Asambleas</a>
-            <a class="btn btn-primary" href="/oficial/public/asistenciacooperacione">Cooperaciones</a>
-
 
           
         </td>
@@ -53,7 +63,5 @@
     @endforeach
 
     </table> 
-     
-    {!! $ciudadanos->render() !!}
 
 @endsection

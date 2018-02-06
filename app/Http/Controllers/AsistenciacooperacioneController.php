@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Asistenciacooperacione;
+
+use Illuminate\Http\Request;
 
 class AsistenciacooperacioneController extends Controller
 {
