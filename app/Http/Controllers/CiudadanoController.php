@@ -100,4 +100,23 @@ class CiudadanoController extends Controller
         $familiares = $ciudadano->familiares;
         return view('familiar.index', compact('familiares', 'ciudadano'));
     }
+
+    public function mostrarAsistenciatequio(Ciudadano $ciudadano)
+    {
+        $asistenciatequios = $ciudadano->asistenciatequios;
+        return view('asistenciatequio.index', compact('asistenciatequios', 'ciudadano'));
+    }
+
+    public function mostrarAsistenciaasamblea(Ciudadano $ciudadano)
+    {
+        $asistenciaasambleas = $ciudadano->asistenciaasambleas;
+        return view('asistenciaasamblea.index', compact('asistenciaasambleas', 'ciudadano'));
+    }
+
+    public function mostrarAsistenciacooperacion(Ciudadano $ciudadano)
+    {
+        $asistenciacooperaciones = $ciudadano->asistenciacooperaciones;
+        return view('asistenciacooperacione.index', compact('asistenciacooperaciones', 'ciudadano'));
+    }
+
 }

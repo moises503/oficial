@@ -57,4 +57,11 @@ class TequioController extends Controller
                         ->with('success','Tequio modificado coorectamente');
     }
 
+
+    public function mostrarAsistenciaTequio(Tequio $tequio)
+    {
+        $asistenciatequios = $tequio->asistenciatequios;
+        return view('asistenciatequio.index', compact('asistenciatequios', 'tequio'));
+    }
+
 }

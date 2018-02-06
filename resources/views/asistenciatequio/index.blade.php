@@ -3,7 +3,16 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
+            @if(isset($ciudadano))
+                    <h2>Asistencia a tequios de {{ $ciudadano->nombre }}</h2>
+                    
+                    @elseif(isset($tequio))
+                    <h2>Asistencia a tequios de {{ $tequio->tipo }}</h2>
+                
+                     @else
                 <h2>Asistencia a Tequios</h2>
+                @endif
+         
             </div>
             <div class="pull-right">
             <a class="btn btn-success" href="{{ route('asistenciatequio.create') }}"> Pasar Lista</a> 

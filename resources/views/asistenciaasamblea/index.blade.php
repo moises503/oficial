@@ -3,9 +3,14 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Asistencia Asambleas</h2>
+                @if(isset($ciudadano))
+                    <h2>Asistencia asambleas de {{ $ciudadano->nombre }}</h2>
+                @else
+                <h2>Asistencia a Asambleas</h2>
+                @endif
             </div>
             <div class="pull-right">
+
             <a class="btn btn-success" href="{{ route('asistenciaasamblea.create') }}"> Pasar Lista</a>
             </div>
         </div>

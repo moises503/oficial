@@ -12,7 +12,7 @@ class Asistenciacooperacione extends Model
 
     public function cooperaciones()
     {
-    return $this->belongsTo('App\Cooperacione','cooperacione_id');
+    return $this->belongsTo('App\Cooperacion','cooperacione_id');
     }
 
    

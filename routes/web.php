@@ -1,6 +1,9 @@
 <?php
 
 Route::resource('tequio','TequioController');
+Route::get('tequio/{tequio}/ver-asistencia-','TequioController@mostrarAsistenciaTequio')->name('tequio.asistenciatequios');
+
+
 
 Route::resource('asamblea','AsambleaController');
 
@@ -15,10 +18,14 @@ Route::get('ciudadano/{ciudadano}/agregar-familiar', 'FamiliarController@agregar
 Route::get('ciudadano/{ciudadano}/ver-familiares','CiudadanoController@mostrarFamiliares')->name('ciudadano.familiares');
 
 Route::resource('asistenciaasamblea','AsistenciaasambleaController');
+Route::get('ciudadano/{ciudadano}/ver-asistencias-asamblea','CiudadanoController@mostrarAsistenciaasamblea')->name('ciudadano.asistenciaasambleas');
 
 Route::resource('asistenciatequio','AsistenciatequioController');
+//Route::get('ciudadano/{ciudadano}/agregar-asistencia', 'AsistenciatequioController@agregarAsistenciaACiudadano')->name('asistenciatequio.ciudadano');
+Route::get('ciudadano/{ciudadano}/ver-asistencia-tequio','CiudadanoController@mostrarAsistenciatequio')->name('ciudadano.asistenciatequios');
 
 Route::resource('asistenciacooperacione','AsistenciacooperacioneController');
+Route::get('ciudadano/{ciudadano}/ver-asistencia-cooperacion','CiudadanoController@mostrarAsistenciacooperacion')->name('ciudadano.asistenciacooperaciones');
 
 
 

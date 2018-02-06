@@ -51,9 +51,9 @@
             <a class="btn btn-info" href="{{ route('ciudadano.show',$ciudadano) }}">Informacion</a>
             <a class="btn btn-info" href="{{ route('ciudadano.edit',$ciudadano) }}">Editar</a>
             <a class="btn btn-info" href="{{ route('familiar.ciudadano', $ciudadano) }}">Agregar Familiar</a>
-            <a class="btn btn-primary" href=" {{ route('asistenciatequio.index') }}">Tequios</a>
-            <a class="btn btn-primary" href=" {{ route('asistenciaasamblea.index') }}">Asambleas</a>
-            <a class="btn btn-primary" href=" {{ route('asistenciacooperacione.index') }}">Cooperaciones</a>
+            <a class="btn btn-primary" href="{{ route('ciudadano.asistenciatequios', $ciudadano)}}">Tequios</a>
+            <a class="btn btn-primary" href="{{ route('ciudadano.asistenciaasambleas', $ciudadano)}}">Asambleas</a>
+            <a class="btn btn-primary" href=" {{ route('ciudadano.asistenciacooperaciones', $ciudadano)}}">Cooperaciones</a>
             <a class="btn btn-info" href="{{ route('ciudadano.familiares', $ciudadano) }}">Ver familiares</a>
 
           

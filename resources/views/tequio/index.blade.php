@@ -36,8 +36,8 @@
         <td>
             <a class="btn btn-info" href="{{ route('tequio.show',$tequio->id) }}">Ver</a>
             <a class="btn btn-info" href="{{ route('tequio.edit',$tequio->id) }}">Editar</a>
-            <a class="btn btn-info" href="{{ route('asistenciatequio.index') }}">Ver asistencias</a>
-            <a class="btn btn-primary" href="{{ route('asistenciatequio.index') }}">Pasar Lista</a>
+            <a class="btn btn-info" href="{{ route('tequio.asistenciatequios', $tequio)}}">Ver asistencias</a>
+            <a class="btn btn-primary" href="{{ route('asistenciatequio.create') }}">Pasar Lista</a>
 
         </td>
     </tr>

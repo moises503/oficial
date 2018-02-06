@@ -3,7 +3,11 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Cumplimiento de Cooperaciones</h2>
+            @if(isset($ciudadano))
+                    <h2>Cooperaciones de {{ $ciudadano->nombre }}</h2>
+                @else
+                    <h2>Cumplimiento de cooperaciones</h2>
+                @endif
             </div>
             <div class="pull-right">
               <a class="btn btn-success" href="{{ route('asistenciacooperacione.create') }}"> Pasar Lista</a>

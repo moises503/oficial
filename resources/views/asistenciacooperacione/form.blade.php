@@ -4,7 +4,8 @@
     <div class="col-md-6 mb-3">
         <div class="form-group">
             <strong>Asistencia:</strong>
-            {!! Form::text('asistencia', null, array('placeholder' => 'nombre','class' => 'form-control','required')) !!}
+           <!-- {!! Form::text('asistencia', null, array('placeholder' => 'nombre','class' => 'form-control','required')) !!}-->
+            {!! Form::select('asistencia', ['Seleccione','si' => 'SI', 'no' => 'NO'], null, ['class' => 'form-control']) !!}
         </div>
 
      <div class="col-md-6 mb-3">
@@ -17,7 +18,7 @@
     <div class="col-md-6 mb-3">
         <div class="form-group">
             <strong>id de cooperacion:</strong>
-            {!! Form::number('cooperacione_id', null, array('placeholder' => 'id_ciudadano','class' => 'form-control','required')) !!}
+            {!! Form::number('cooperacione_id', null, array('placeholder' => 'id_cooperacione','class' => 'form-control','required')) !!}
         </div>
     </div>
    
