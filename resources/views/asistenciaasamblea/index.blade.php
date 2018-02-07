@@ -8,7 +8,6 @@
                     
                     @elseif(isset($asamblea))
                     <h2>Lista de asistencias de asamblea denominada {{ $asamblea->tipo }}</h2>
-                
                      @else
                 <h2>Asistencia a asambleas</h2>
                 @endif
