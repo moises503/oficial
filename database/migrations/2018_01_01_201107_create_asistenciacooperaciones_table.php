@@ -18,10 +18,10 @@ class CreateAsistenciacooperacionesTable extends Migration
             $table->string('asistencia');
             $table->timestamps();
             $table->integer('ciudadano_id')->unsigned();
-            $table->integer('cooperacione_id')->unsigned();
+            $table->integer('cooperacion_id')->unsigned();
             
             $table->foreign('ciudadano_id')->references('id')->on('ciudadanos');
-            $table->foreign('cooperacione_id')->references('id')->on('cooperaciones');
+            $table->foreign('cooperacion_id')->references('id')->on('cooperaciones');
         });
     }
 

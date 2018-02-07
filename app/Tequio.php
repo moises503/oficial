@@ -11,9 +11,8 @@ class Tequio extends Model
     ];
 
     
-    public function asistenciatequio()
+    public function asistenciatequios()
     {
-        //return $this->belongsTo('App\Ciudadano','ciudadano_id');
-        return $this->hasMany(Asistenciatequio::class);
+        return $this->hasMany('App\Asistenciatequio');
     }
 }

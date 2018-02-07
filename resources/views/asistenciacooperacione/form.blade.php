@@ -18,7 +18,7 @@
     <div class="col-md-6 mb-3">
         <div class="form-group">
             <strong>id de cooperacion:</strong>
-            {!! Form::number('cooperacione_id', null, array('placeholder' => 'id_cooperacione','class' => 'form-control','required')) !!}
+            {!! Form::number('cooperacion_id', null, array('placeholder' => 'id_cooperacion','class' => 'form-control','required')) !!}
         </div>
     </div>
    

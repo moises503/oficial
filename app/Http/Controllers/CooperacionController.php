@@ -58,4 +58,11 @@ class CooperacionController extends Controller
                         ->with('success','Cooperacion modificada correctamente');
     }
 
+
+    public function mostrarAsistenciaCooperaciones(Cooperacion $cooperacion)
+    {
+        $asistenciacooperaciones = $cooperacion->asistenciacooperaciones;
+        return view('asistenciacooperacione.index', compact('asistenciacooperaciones', 'cooperacion'));
+    }
+
 }

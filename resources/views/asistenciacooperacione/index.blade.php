@@ -4,9 +4,13 @@
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
             @if(isset($ciudadano))
-                    <h2>Cooperaciones de {{ $ciudadano->nombre }}</h2>
-                @else
-                    <h2>Cumplimiento de cooperaciones</h2>
+                    <h2>Asistencia a tequios de {{ $ciudadano->nombre }}</h2>
+                    
+                    @elseif(isset($cooperacion))
+                    <h2>Lista de asistencias del tequio{{ $tequio->tipo }}</h2>
+                
+                     @else
+                <h2>Asistencia a Tequios</h2>
                 @endif
             </div>
             <div class="pull-right">

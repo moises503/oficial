@@ -28,7 +28,7 @@
             </tr>
     @foreach ($tequios as $tequio)
     <tr>
-        <td>{{ ++$i }}</td>
+        <td>{{ $tequio->id}}</td>
         <td>{{ $tequio->tipo}}</td>
         <td>{{ $tequio->descripcion}}</td>
         <td>{{ $tequio->organiza}}</td>

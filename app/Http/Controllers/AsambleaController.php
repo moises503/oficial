@@ -55,4 +55,13 @@ class AsambleaController extends Controller
                         ->with('success','Asamblea modificada correctamente');
     }
 
+
+    public function mostrarAsistenciaAsambleas(Asamblea $asamblea)
+    {
+        $asistenciaasambleas = $asamblea->asistenciaasambleas;
+        return view('asistenciaasamblea.index', compact('asistenciaasambleas', 'asamblea'));
+    }
+
+
+    
 }

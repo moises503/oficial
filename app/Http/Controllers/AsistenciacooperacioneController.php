@@ -28,7 +28,7 @@ class AsistenciacooperacioneController extends Controller
 
             'asistencia' => 'required',
             'ciudadano_id'=> 'required',
-            'cooperacione_id'=> 'required',
+            'cooperacion_id'=> 'required',
             
 
         ]);

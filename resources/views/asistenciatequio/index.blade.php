@@ -7,7 +7,7 @@
                     <h2>Asistencia a tequios de {{ $ciudadano->nombre }}</h2>
                     
                     @elseif(isset($tequio))
-                    <h2>Asistencia a tequios de {{ $tequio->tipo }}</h2>
+                    <h2>Lista de asistencias del tequio{{ $tequio->tipo }}</h2>
                 
                      @else
                 <h2>Asistencia a Tequios</h2>

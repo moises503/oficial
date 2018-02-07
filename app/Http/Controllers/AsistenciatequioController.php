@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Asistenciatequio;
 
+
 class AsistenciatequioController extends Controller
 {
     public function index()
     {
-        $asistenciatequios = Asistenciatequio::with('ciudadanos', 'tequios')->get();
-     
+        $asistenciatequios = Asistenciatequio::with('ciudadanos', 'tequios')->get();  
         return view('asistenciatequio.index',compact('asistenciatequios'));
     }
 

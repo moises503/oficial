@@ -3,10 +3,14 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                @if(isset($ciudadano))
-                    <h2>Asistencia asambleas de {{ $ciudadano->nombre }}</h2>
-                @else
-                <h2>Asistencia a Asambleas</h2>
+            @if(isset($ciudadano))
+                    <h2>Asistencia a asambleas de {{ $ciudadano->nombre }}</h2>
+                    
+                    @elseif(isset($asamblea))
+                    <h2>Lista de asistencias de asamblea denominada {{ $asamblea->tipo }}</h2>
+                
+                     @else
+                <h2>Asistencia a asambleas</h2>
                 @endif
             </div>
             <div class="pull-right">

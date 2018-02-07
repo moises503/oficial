@@ -11,4 +11,11 @@ class Cooperacion extends Model
     protected $fillable = [
         'tipo', 'descripcion' , 'organiza' , 'cantidad', 'fechacooperacion'
     ];
+
+
+    public function asistenciacooperaciones()
+    {
+        return $this->hasMany('App\Asistenciacooperacione');
+    }
+
 }

@@ -38,7 +38,7 @@
         <td>
             <a class="btn btn-info" href="{{ route('cooperacion.show',$cooperacion) }}">Ver</a>
             <a class="btn btn-info" href="{{ route('cooperacion.edit',$cooperacion) }}">Editar</a>
-            <a class="btn btn-info" href="{{ route('asistenciacooperacione.index') }}">Ver asistencias</a>
+            <a class="btn btn-info" href="{{ route('cooperacion.asistenciacooperaciones', $cooperacion)}}">Ver asistencias</a>
             <a class="btn btn-primary" href="{{ route('asistenciacooperacione.create') }}">Pasar Lista</a>
         </td>
         {!! Form::close() !!}
@@ -47,3 +47,4 @@
     </table>
     {!! $cooperaciones->render() !!}
 @endsection
+

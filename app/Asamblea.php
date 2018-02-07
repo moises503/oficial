@@ -9,4 +9,10 @@ class Asamblea extends Model
     protected $fillable = [
         'tipo', 'descripcion' , 'organiza' , 'fechaasamblea'
     ];
+
+
+    public function asistenciaasambleas()
+    {
+        return $this->hasMany('App\Asistenciaasamblea');
+    }
 }

@@ -1,13 +1,14 @@
 <?php
 
 Route::resource('tequio','TequioController');
-Route::get('tequio/{tequio}/ver-asistencia-','TequioController@mostrarAsistenciaTequio')->name('tequio.asistenciatequios');
-
-
+Route::get('tequio/{tequio}/ver-asistencia-a-tequio','TequioController@mostrarAsistenciaTequios')->name('tequio.asistenciatequios');
 
 Route::resource('asamblea','AsambleaController');
+Route::get('asamblea/{asamblea}/ver-asistencia-a-asamblea','AsambleaController@mostrarAsistenciaAsambleas')->name('asamblea.asistenciaasambleas');
 
 Route::resource('cooperacion','CooperacionController');
+Route::get('cooperacion/{cooperacion}/ver-asistencia-a-cooperaciones','CooperacionController@mostrarAsistenciaCooperaciones')->name('cooperacion.asistenciacooperaciones');
+
 
 Route::resource('ciudadano','CiudadanoController');
 
