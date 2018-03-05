@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAsistenciatequiosTable extends Migration
+class CreateAsambleaCiudadanoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateAsistenciatequiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('asistenciatequios', function (Blueprint $table) {
+        Schema::create('asamblea_ciudadano', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('asistencia');
-            $table->timestamps();
-            
-            $table->integer('ciudadano_id')->unsigned();
-            $table->integer('tequio_id')->unsigned();
-            
+            $table->unsignedInteger('asamblea_id');
+            $table->unsignedInteger('ciudadano_id');
+            $table->boolean('asistio')->default(false);
+            $table->foreign('asamblea_id')->references('id')->on('asambleas');
             $table->foreign('ciudadano_id')->references('id')->on('ciudadanos');
-            $table->foreign('tequio_id')->references('id')->on('tequios');
         });
     }
 
@@ -33,6 +30,6 @@ class CreateAsistenciatequiosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asistenciatequios');
+        Schema::dropIfExists('asamblea_ciudadano');
     }
 }

@@ -21,7 +21,7 @@ class CooperacionController extends Controller
     
     public function store(Request $request)
     {
-            request()->validate([
+        request()->validate([
             'tipo' => 'required',
             'descripcion',
             'organiza' ,

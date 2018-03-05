@@ -20,18 +20,5 @@ class Ciudadano extends Model
         return $this->hasMany(Familiar::class);
     }
 
-    public function asistenciatequios()
-    {
-        return $this->hasMany('App\Asistenciatequio');
-    }
 
-    public function asistenciaasambleas()
-    {
-        return $this->hasMany('App\Asistenciaasamblea');
-    }
-
-    public function asistenciacooperaciones()
-    {
-        return $this->hasMany('App\Asistenciacooperacione');
-    }
 }

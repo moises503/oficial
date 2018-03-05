@@ -15,7 +15,16 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="buscar-nombre" placeholder="Introduce un nombre">
+                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <table class="table table-bordered">
         <tr>
             <th>Id</th>

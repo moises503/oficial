@@ -5,9 +5,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
     <style>
 
         footer{
@@ -33,6 +30,7 @@
         }
 
     </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
