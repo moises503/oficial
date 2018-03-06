@@ -14,12 +14,12 @@ class CreateCiudadanoCooperacionTable extends Migration
     public function up()
     {
         Schema::create('ciudadano_cooperacion', function (Blueprint $table) {
-            $table->increments('id');
             $table->unsignedInteger('ciudadano_id');
             $table->unsignedInteger('cooperacion_id');
-            $table->boolean('asistio')->default(false);
-            $table->foreign('ciudadano_id')->references('id')->on('ciudadanos');
-            $table->foreign('cooperacion_id')->references('id')->on('cooperaciones');
+            $table->boolean('asistio');
+            $table->timestamps();
+            $table->foreign('ciudadano_id')->references('id')->on('ciudadanos')->onUpdate('cascade');
+            $table->foreign('cooperacion_id')->references('id')->on('cooperaciones')->onUpdate('cascade');
         });
     }
 

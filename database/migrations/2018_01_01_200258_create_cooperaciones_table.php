@@ -20,7 +20,7 @@ class CreateCooperacionesTable extends Migration
             $table->string('organiza')->nullable();
             $table->string('cantidad')->nullable();
             $table->date('fechacooperacion');
-
+            $table->boolean('activa')->default(true);
             $table->timestamps();
         });
     }

@@ -14,12 +14,12 @@ class CreateCiudadanoTequioTable extends Migration
     public function up()
     {
         Schema::create('ciudadano_tequio', function (Blueprint $table) {
-            $table->increments('id');
             $table->unsignedInteger('ciudadano_id');
             $table->unsignedInteger('tequio_id');
-            $table->boolean('asistio')->default(false);
-            $table->foreign('ciudadano_id')->references('id')->on('ciudadanos');
-            $table->foreign('tequio_id')->references('id')->on('tequios');
+            $table->boolean('asistio');
+            $table->timestamps();
+            $table->foreign('ciudadano_id')->references('id')->on('ciudadanos')->onUpdate('cascade');
+            $table->foreign('tequio_id')->references('id')->on('tequios')->onUpdate('cascade');
         });
     }
 

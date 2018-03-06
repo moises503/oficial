@@ -10,12 +10,7 @@
             </div>
         </div>
     </div>
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
-
+    @include('partials.alertas')
     <table class="table table-bordered">
         <tr>
             <th>No</th>
@@ -25,7 +20,7 @@
             <th>Cantidad</th>
             <th>Fecha</th>
             <th width="360px">Operacion</th>
-            
+
             </tr>
     @foreach ($cooperaciones as $cooperacion)
     <tr>
@@ -38,8 +33,11 @@
         <td>
             <a class="btn btn-info" href="{{ route('cooperacion.show',$cooperacion) }}">Ver</a>
             <a class="btn btn-info" href="{{ route('cooperacion.edit',$cooperacion) }}">Editar</a>
-            <a class="btn btn-info" href="/oficial/public/asistenciacooperacione">Ver asistencias</a>
-            <a class="btn btn-primary" href="/oficial/public/asistenciacooperacione">Pasar Lista</a>
+            @if($cooperacion->activa)
+                <a class="btn btn-primary" href="{{ route('lista.cooperacion', $cooperacion) }}">Pasar lista</a>
+            @else
+                <a class="btn btn-info" href="{{ route('asistencias.cooperacion', $cooperacion) }}">Ver asistencias</a>
+            @endif
         </td>
         {!! Form::close() !!}
     </tr>
@@ -47,3 +45,4 @@
     </table>
     {!! $cooperaciones->render() !!}
 @endsection
+

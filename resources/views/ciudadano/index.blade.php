@@ -45,17 +45,13 @@
         <td>{{ $ciudadano->residencia}}</td>
         <td>{{ $ciudadano->fechanacimiento}}</td>
         <td>
-           
             <a class="btn btn-info" href="{{ route('ciudadano.show',$ciudadano) }}">Informacion</a>
             <a class="btn btn-info" href="{{ route('ciudadano.edit',$ciudadano) }}">Editar</a>
             <a class="btn btn-info" href="{{ route('familiar.ciudadano', $ciudadano) }}">Agregar Familiar</a>
             <a class="btn btn-info" href="{{ route('ciudadano.familiares', $ciudadano) }}">Ver familiares</a>
             <a class="btn btn-primary" href="/oficial/public/asistenciatequio">Tequios</a>
             <a class="btn btn-primary" href="/oficial/public/asistenciaasamblea">Asambleas</a>
-            <a class="btn btn-primary" href="/oficial/public/asistenciacooperacione">Cooperaciones</a>
-
-
-          
+            <a class="btn btn-primary" href="{{ route('asistencias.ciudadano.cooperacion', $ciudadano) }}">Cooperaciones</a>
         </td>
         
     </tr>

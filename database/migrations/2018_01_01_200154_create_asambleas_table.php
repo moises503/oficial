@@ -19,7 +19,7 @@ class CreateAsambleasTable extends Migration
             $table->string('descripcion')->nullable();
             $table->string('organiza')->nullable();
             $table->date('fechaasamblea');
-
+            $table->boolean('activa')->default(true);
             $table->timestamps();
         });
     }

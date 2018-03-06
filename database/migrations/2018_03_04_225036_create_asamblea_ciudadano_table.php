@@ -14,12 +14,12 @@ class CreateAsambleaCiudadanoTable extends Migration
     public function up()
     {
         Schema::create('asamblea_ciudadano', function (Blueprint $table) {
-            $table->increments('id');
             $table->unsignedInteger('asamblea_id');
             $table->unsignedInteger('ciudadano_id');
-            $table->boolean('asistio')->default(false);
-            $table->foreign('asamblea_id')->references('id')->on('asambleas');
-            $table->foreign('ciudadano_id')->references('id')->on('ciudadanos');
+            $table->boolean('asistio');
+            $table->timestamps();
+            $table->foreign('asamblea_id')->references('id')->on('asambleas')->onUpdate('cascade');
+            $table->foreign('ciudadano_id')->references('id')->on('ciudadanos')->onUpdate('cascade');
         });
     }
 

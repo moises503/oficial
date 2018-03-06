@@ -19,7 +19,7 @@ class CreateTequiosTable extends Migration
             $table->string('descripcion')->nullable();
             $table->string('organiza')->nullable();
             $table->date('fechatequio');
-
+            $table->boolean('activa')->default(true);
             $table->timestamps();
         });
     }

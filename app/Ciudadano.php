@@ -10,7 +10,7 @@ class Ciudadano extends Model
         'nombre', 'lugarnacimiento', 'fechanacimiento', 'calledomicilio',
         'numerodomicilio' ,  'residencia', 'sexo',
         'lenguamaterna',  'ocupacion', 'gradoestudios',
-        'estadocivil', 'fechacasado', 'servicioagua', 'nombretomaagua',
+        'estadocivil', 'fechacasado', 'fechaciudadano','servicioagua', 'nombretomaagua',
         'serviciosalud', 'serviciopanteon', 'nombreresponsable',
         'serviciodrenaje', 'servicioenergia'
     ];
@@ -20,5 +20,20 @@ class Ciudadano extends Model
         return $this->hasMany(Familiar::class);
     }
 
+    public function asambleas()
+    {
+        return $this->belongsToMany(Asamblea::class);
+    }
 
+    public function cooperaciones()
+    {
+        return $this->belongsToMany(Cooperacion::class)
+            ->withPivot('asistio')
+            ->withTimestamps();
+    }
+
+    public function tequios()
+    {
+        return $this->belongsToMany(Tequio::class);
+    }
 }
