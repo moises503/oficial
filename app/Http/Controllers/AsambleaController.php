@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Asamblea;
+use App\Ciudadano;
+use Illuminate\Http\Request;
 
 class AsambleaController extends Controller
 {
@@ -27,7 +29,13 @@ class AsambleaController extends Controller
             'organiza',
             'fechaasamblea' ,
         ]);
-        Asamblea::create($request->all());
+        $ciudadanos = Ciudadano::whereNotNull('fechaciudadano')->get();
+        if($ciudadanos->isEmpty()){
+            return redirect()->route('cooperacion.index')->with('danger','Debes agregar ciudadanos al sistema para poder
+             crear una cooperación, recuerda proporcionar su fecha de nacimiento y fecha de ciudadanía');
+        }
+        $asamblea = Asamblea::create($request->all());
+        $this->agregarCiudadanosAlaLista($ciudadanos, $asamblea);
         return redirect()->route('asamblea.index')
                         ->with('success','Asamblea creada correctamente');
     }
@@ -55,4 +63,12 @@ class AsambleaController extends Controller
                         ->with('success','Asamblea modificada correctamente');
     }
 
+    private function agregarCiudadanosAlaLista($ciudadanos, $asamblea)
+    {
+        foreach ($ciudadanos as $ciudadano){
+            if(Carbon::parse($ciudadano->fechanacimiento)->age >= 18){
+                $asamblea->ciudadanos()->attach($ciudadano->id, ['asistio' => false]);
+            }
+        }
+    }
 }

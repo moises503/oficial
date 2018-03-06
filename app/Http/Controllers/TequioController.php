@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Tequio;
-
+use Carbon\Carbon;
+use App\Ciudadano;
+use Illuminate\Http\Request;
 
 class TequioController extends Controller
 {
@@ -29,7 +30,13 @@ class TequioController extends Controller
             'organiza' ,
             'fechatequio' => 'required',
         ]);
-        Tequio::create($request->all());
+        $ciudadanos = Ciudadano::whereNotNull('fechaciudadano')->get();
+        if($ciudadanos->isEmpty()){
+            return redirect()->route('tequio.index')->with('danger','Debes agregar ciudadanos al sistema para poder
+             crear una cooperación, recuerda proporcionar su fecha de nacimiento y fecha de ciudadanía');
+        }
+        $tequio = Tequio::create($request->all());
+        $this->agregarCiudadanosAlaLista($ciudadanos, $tequio);
         return redirect()->route('tequio.index')
                         ->with('success','Tequio agregado correctamente');
     }
@@ -55,6 +62,15 @@ class TequioController extends Controller
         $tequio->update($request->all());
         return redirect()->route('tequio.index')
                         ->with('success','Tequio modificado coorectamente');
+    }
+
+    private function agregarCiudadanosAlaLista($ciudadanos, $tequio)
+    {
+        foreach ($ciudadanos as $ciudadano){
+            if(Carbon::parse($ciudadano->fechanacimiento)->age >= 18){
+                $tequio->ciudadanos()->attach($ciudadano->id, ['asistio' => false]);
+            }
+        }
     }
 
 }

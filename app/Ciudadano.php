@@ -22,7 +22,9 @@ class Ciudadano extends Model
 
     public function asambleas()
     {
-        return $this->belongsToMany(Asamblea::class);
+        return $this->belongsToMany(Asamblea::class)
+            ->withPivot('asistio')
+            ->withTimestamps();
     }
 
     public function cooperaciones()
@@ -34,6 +36,8 @@ class Ciudadano extends Model
 
     public function tequios()
     {
-        return $this->belongsToMany(Tequio::class);
+        return $this->belongsToMany(Tequio::class)
+            ->withPivot('asistio')
+            ->withTimestamps();
     }
 }

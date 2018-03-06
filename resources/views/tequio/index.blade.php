@@ -36,9 +36,11 @@
         <td>
             <a class="btn btn-info" href="{{ route('tequio.show',$tequio->id) }}">Ver</a>
             <a class="btn btn-info" href="{{ route('tequio.edit',$tequio->id) }}">Editar</a>
-            <a class="btn btn-info" href="/oficial/public/asistenciatequio">Ver asistencias</a>
-            <a class="btn btn-primary" href="/oficial/public/asistenciatequio">Pasar Lista</a>
-
+            @if($tequio->activa)
+                <a class="btn btn-primary" href="{{ route('lista.tequio', $tequio) }}">Pasar Lista</a>
+            @else
+                <a class="btn btn-info" href="{{ route('asistencias.tequio', $tequio) }}">Ver asistencias</a>
+            @endif
         </td>
     </tr>
     @endforeach

@@ -12,6 +12,8 @@ class Tequio extends Model
 
     public function ciudadanos()
     {
-        return $this->belongsToMany(Ciudadano::class);
+        return $this->belongsToMany(Ciudadano::class)
+            ->withPivot('asistio')
+            ->withTimestamps();
     }
 }

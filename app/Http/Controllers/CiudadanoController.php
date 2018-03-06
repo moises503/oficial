@@ -3,14 +3,23 @@
 
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+
 use App\Ciudadano;
+use Illuminate\Http\Request;
 
 class CiudadanoController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
+        if($request->has('busqueda')){
+            $busqueda = $request->get('busqueda');
+            if(empty($busqueda)){
+                return redirect()->back()->with('danger','Proporcione un nombre para realizar la búsqueda');
+            }
+            $ciudadanos = Ciudadano::where('nombre','LIKE',"%$busqueda%")->paginate(5);
+            return view('ciudadano.index', compact('ciudadanos'));
+        }
         $ciudadanos = Ciudadano::latest()->paginate(5);
         return view('ciudadano.index',compact('ciudadanos'))
         ->with('i', (request()->input('page', 1) - 1) * 5); 

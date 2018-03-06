@@ -10,12 +10,7 @@
             </div>
         </div>
     </div>
-    @if ($message = Session::get('success'))
-        <div class="alert alert-success">
-            <p>{{ $message }}</p>
-        </div>
-    @endif
-
+    @include('partials.alertas')
     <table class="table table-bordered">
         <tr>
             <th>No</th>
@@ -24,11 +19,10 @@
             <th>Organiza</th>
             <th>Fecha Asamblea</th>
             <th width="360px">Operacion</th>
-            
-            </tr>
+        </tr>
     @foreach ($asambleas as $asamblea)
     <tr>
-        <td>{{ ++$i }}</td>
+        <td>{{ $asamblea->id }}</td>
         <td>{{ $asamblea->tipo}}</td>
         <td>{{ $asamblea->descripcion}}</td>
         <td>{{ $asamblea->organiza}}</td>
@@ -36,11 +30,11 @@
         <td>
             <a class="btn btn-info" href="{{ route('asamblea.show',$asamblea->id) }}">Ver</a>
             <a class="btn btn-info" href="{{ route('asamblea.edit',$asamblea->id) }}">Editar</a>
-            <a class="btn btn-info" href="/oficial/public/asistenciaasamblea">Ver asistencias</a>
-            <a class="btn btn-primary" href="/oficial/public/asistenciaasamblea">Pasar Lista</a>
-
-
-            {!! Form::close() !!}
+            @if($asamblea->activa)
+                <a class="btn btn-primary" href="{{ route('lista.asamblea', $asamblea) }}">Pasar Lista</a>
+            @else
+                <a class="btn btn-info" href="{{ route('asistencias.asamblea', $asamblea) }}">Ver asistencias</a>
+            @endif
         </td>
         
     </tr>
